@@ -79,7 +79,7 @@ ingress:
   # Custom annotations for ingress resource
   annotations: {}
   # Default host for the ingress resource
-  hostname: ""
+  hostname: "seleniumgrid.com"
   # Default host path for the ingress resource
   path: /
   # Default path type for the ingress resource
@@ -365,7 +365,6 @@ hub:
   imagePullPolicy: IfNotPresent
   # Image pull secret (see https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
   imagePullSecret: ""
-
   # Custom annotations for Selenium Hub pods
   annotations: {}
   # Custom labels for Selenium Hub pods
