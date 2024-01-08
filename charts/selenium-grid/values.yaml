@@ -2,7 +2,7 @@ global:
   # Public IP of the host running Kubernetes cluster.
   # This is used to access the Selenium Grid from outside the cluster when ingress is disabled or enabled without a hostname is set.
   # This is part of constructing SE_NODE_GRID_URL and rewrite URL of `se:vnc`, `se:cdp` in the capabilities when `ingress.hostname` is unset
-  K8S_PUBLIC_IP: "34.170.146.239"
+  K8S_PUBLIC_IP: "52.224.37.66"
   seleniumGrid:
     # Image registry for all selenium components
     imageRegistry: selenium
