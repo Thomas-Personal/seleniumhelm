@@ -79,7 +79,7 @@ ingress:
   # Custom annotations for ingress resource
   annotations: {}
   # Default host for the ingress resource
-  hostname: "seleniumgrid.com"
+  hostname: ""
   # Default host path for the ingress resource
   path: /
   # Default path type for the ingress resource
@@ -359,8 +359,6 @@ hub:
   # imageRegistry: selenium
   # Selenium Hub image name
   imageName: hub
-  subPath: "/selenium"
-  serviceType: NodePort
   # Selenium Hub image tag (this overwrites global.seleniumGrid.imageTag parameter)
   # imageTag: 4.16.1-20231219
   # Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images)
