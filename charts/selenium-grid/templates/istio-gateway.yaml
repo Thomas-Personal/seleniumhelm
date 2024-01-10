@@ -11,7 +11,7 @@ spec:
   selector:
     istio: ingressgateway
   servers:
-    {{-range .Values.istio.gateway.serverPorts}}
+    {{- range .Values.istio.gateway.serverPorts}}
     - port:
         number: {{.number}}
         name: {{.name}}
