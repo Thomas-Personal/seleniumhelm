@@ -5,7 +5,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
     argocd.argoproj.io/sync-options: PruneLast=true
-  name: {{.Values.istio.namespace.name}}-ig
+  name: {{.Values.istio.gateway.namespace}}-ig
   namespace: {{.Values.istio.gateway.namespace}}
 spec:
   selector:
