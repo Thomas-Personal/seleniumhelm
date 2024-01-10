@@ -5,7 +5,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
     argocd.argoproj.io/sync-options: PruneLast=true
-  name: {{.Values.namespace.name}}-ig
+  name: {{.Values.istio.namespace.name}}-ig
   namespace: {{.Values.istio.gateway.namespace}}
 spec:
   selector:
@@ -24,7 +24,7 @@ spec:
         serverCertificate: tls.crt
       {{- end}}
       hosts:
-        {{- range .appToLevelDomains}}
+        {{- range .appTopLevelDomains}}
         - {{.}}
         {{- end}}
     {{- end}}

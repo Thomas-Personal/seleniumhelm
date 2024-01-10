@@ -64,12 +64,20 @@ serviceAccount:
 istio:
   # enable flags can be used to turn on or off specific istio features
   flags:
+    gatewayEnabled : true
     virtualServiceEnabled : true
+  # istio gateway
+  gateway:
+    namespace: default
+    serverPorts : 
+      - number : 80
+        name: selenium
+        protocol : HTTP
   # istioVirtualService
   virtualService:
     namespace: default
     gateways:
-      - seleniumgrid-ig
+      - default-ig
     match:
       - appEndpoints:
           - /
