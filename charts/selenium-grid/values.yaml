@@ -69,7 +69,7 @@ istio:
   virtualService:
     namespace: seleniumgrid
     gateways:
-      -seleniumgrid-ig
+      - seleniumgrid-ig
     match:
       - appEndpoints:
           - /
@@ -78,7 +78,7 @@ istio:
             host: selenium-hub
     appTopLevelDomains:
       - seleniumgrid-sbx.humana.com
-      
+
 # Configure the ingress resource to access the Grid installation.
 ingress:
   # Enable or disable ingress resource
