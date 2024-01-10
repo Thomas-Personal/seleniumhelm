@@ -24,8 +24,6 @@ spec:
         serverCertificate: tls.crt
       {{- end}}
       hosts:
-        {{- range .appTopLevelDomains}}
-        - {{.}}
-        {{- end}}
+       - "*"
     {{- end}}
 {{- end}}
