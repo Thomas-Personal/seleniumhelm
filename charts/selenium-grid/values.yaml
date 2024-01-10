@@ -67,7 +67,7 @@ istio:
     virtualServiceEnabled : true
   # istioVirtualService
   virtualService:
-    namespace: seleniumgrid
+    namespace: default
     gateways:
       - seleniumgrid-ig
     match:
