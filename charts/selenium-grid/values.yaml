@@ -85,7 +85,7 @@ istio:
           - portNumber : 4444
             host: selenium-hub
     appTopLevelDomains:
-      - seleniumgrid-sbx.humana.com
+      - seleniumhub.thomas.com
 
 # Configure the ingress resource to access the Grid installation.
 ingress:
