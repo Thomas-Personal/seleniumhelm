@@ -1,0 +1,31 @@
+{{-if .Values.istio.flags.gatewayEnabled}}
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-options: PruneLast=true
+  name: {{.Values.namespace.name}}-ig
+  namespace: {{.Values.istio.gateway.namespace}}
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    {{-range .Values.istio.gateway.serverPorts}}
+    - port:
+        number: {{.number}}
+        name: {{.name}}
+        protocol: {{.protocol}}
+      {{- if .tlsEnabled}}
+      tls:
+        mode: SIMPLE
+        credentialName : {{$.Values.namespace.name}}-tls
+        privateKey: tls.key
+        serverCertificate: tls.crt
+      {{- end}}
+      hosts:
+        {{- range .appToLevelDomains}}
+        - {{.}}
+        {{- end}}
+    {{- end}}
+{{- end}}

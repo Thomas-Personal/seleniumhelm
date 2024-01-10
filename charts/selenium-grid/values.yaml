@@ -2,7 +2,7 @@ global:
   # Public IP of the host running Kubernetes cluster.
   # This is used to access the Selenium Grid from outside the cluster when ingress is disabled or enabled without a hostname is set.
   # This is part of constructing SE_NODE_GRID_URL and rewrite URL of `se:vnc`, `se:cdp` in the capabilities when `ingress.hostname` is unset
-  K8S_PUBLIC_IP: "20.163.159.198"
+  K8S_PUBLIC_IP: "20.121.228.180"
   seleniumGrid:
     # Image registry for all selenium components
     imageRegistry: selenium
@@ -61,10 +61,28 @@ serviceAccount:
   annotations: {}
   #  eks.amazonaws.com/role-arn: "arn:aws:iam::12345678:role/video-bucket-permissions"
 
+istio:
+  # enable flags can be used to turn on or off specific istio features
+  flags:
+    virtualServiceEnabled : true
+  # istioVirtualService
+  virtualService:
+    namespace: seleniumgrid
+    gateways:
+      -seleniumgrid-ig
+    match:
+      - appEndpoints:
+          - /
+        destinations:
+          - portNumber : 4444
+            host: selenium-hub
+    appTopLevelDomains:
+      - seleniumgrid-sbx.humana.com
+      
 # Configure the ingress resource to access the Grid installation.
 ingress:
   # Enable or disable ingress resource
-  enabled: true
+  enabled: false
   # Name of ingress class to select which controller will implement ingress resource
   className: ""
   # Refer to list nginx annotations: https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/nginx-configuration/annotations.md#annotations
