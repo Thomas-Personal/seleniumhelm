@@ -1,4 +1,4 @@
-{{-if .Values.istio.flags.gatewayEnabled}}
+{{- if .Values.istio.flags.gatewayEnabled}}
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
