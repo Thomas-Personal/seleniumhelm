@@ -15,7 +15,7 @@ global:
     # Pull secret for all components, can be overridden individually
     imagePullSecret: ""
     # Log level for all components. Possible values describe here: https://www.selenium.dev/documentation/grid/configuration/cli_options/#logging
-    logLevel: INFO
+    logLevel: ALL
 
 tls:
   enabled: false
@@ -523,7 +523,7 @@ autoscaling:
 # Configuration for chrome nodes
 chromeNode:
   # Enable chrome nodes
-  enabled: true
+  enabled: false
 
   # NOTE: Only used when autoscaling.enabled is false
   # Enable creation of Deployment
@@ -833,7 +833,7 @@ firefoxNode:
 # Configuration for edge nodes
 edgeNode:
   # Enable edge nodes
-  enabled: false
+  enabled: true
 
   # NOTE: Only used when autoscaling.enabled is false
   # Enable creation of Deployment
