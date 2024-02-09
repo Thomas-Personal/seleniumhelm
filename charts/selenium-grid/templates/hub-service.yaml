@@ -19,7 +19,7 @@ spec:
     app.kubernetes.io/instance: {{ .Release.Name }}
   type: {{ .Values.hub.serviceType }}
   {{- if and (eq .Values.hub.serviceType "LoadBalancer") ( .Values.hub.loadBalancerIP ) }}
-  loadBalancerIP: {{ .Values. .loadBalancerIP }}
+  loadBalancerIP: {{ .Values.hub.loadBalancerIP }}
   {{- end }}
   ports:
     - name: http-hub
