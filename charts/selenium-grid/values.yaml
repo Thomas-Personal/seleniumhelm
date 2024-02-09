@@ -523,7 +523,7 @@ autoscaling:
 # Configuration for chrome nodes
 chromeNode:
   # Enable chrome nodes
-  enabled: false
+  enabled: true
 
   # NOTE: Only used when autoscaling.enabled is false
   # Enable creation of Deployment
@@ -833,7 +833,7 @@ firefoxNode:
 # Configuration for edge nodes
 edgeNode:
   # Enable edge nodes
-  enabled: true
+  enabled: false
 
   # NOTE: Only used when autoscaling.enabled is false
   # Enable creation of Deployment
